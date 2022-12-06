@@ -1,41 +1,37 @@
-var data = [
-    {
-        beverage: 'Hour1',
-        People: 30,
-    },
-    {
-        beverage: 'Tea',
-        People: 10,
-    },
-    {
-        beverage: 'Milk',
-        People: 5,
-    }
-];
-
 var options = {
-    container: document.querySelector('#Monday'),
-    data: data,
+    container: document.getElementById('myChart'),
     title: {
-        text: 'Day'
+      text: 'Prize money distribution',
     },
 
-    padding: {
-        top: 40,
-        right: 40,
-        bottom: 40,
-        left: 40
-    },
+    data: histogramData,
     series: [
-        { type: 'column', xKey: 'beverage', yKey: 'People', stacked: false,showInLegend: false, fill: '#7ec8e3'},
-
+      {
+        type: 'histogram',
+        xKey: 'time',
+        yKey: 'people',
+        aggregation: 'sum',
+      },
     ],
     legend: {
-        spacing: 50,
-    }
-};
+      enabled: false,
+    },
+    axes: [
+      {
+        type: 'number',
+        position: 'bottom',
+        title: { text: 'People' },
+      },
+      {
+        type: 'number',
+        position: 'left',
+        title: { text: 'Time' },
+      },
+    ],
+    height: 500,
+  };
 
-
+agCharts.AgChart.create(options);
 
 
 var daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']

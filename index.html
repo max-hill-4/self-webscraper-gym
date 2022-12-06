@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>ag-Charts Basic Example</title>
-        <script src="https://unpkg.com/ag-charts-community/dist/ag-charts-community.min.js">
-        </script>
-    </head>
-    <body>
+	<head>
+		<title>Gym Api</title>
+		<style media="only screen">
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+    }
 
-        <div id="Monday" style="position:relative; left:0px; top:0px;"></div>
-        <div id="Tuesday" style="position:relative; left:0px; top:0px;"></div>
-        <div id="Wednesday" style="position:relative; left:0px; top:0px;"></div>
-        <div id="Thursday" style="position:relative; left:0px; top:0px;"></div>
-        <div id="Friday" style="position:relative; left:0px; top:0px;"></div>
-        <div id="Saturday" style="position:relative; left:0px; top:0px;"></div>
-        <div id="Sunday" style="position:relative; left:0px; top:0px;"></div>
-        <script src="main.js"></script>
-        
-    
-    </body>
+    html {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        overflow: auto;
+    }
+
+    body {
+        padding: 1rem;
+        overflow: auto;
+    }
+    </style>
+	</head>
+	<body>
+		<div id="Monday" style="height: 100%;"></div>
+		<div id="Tuesday" style="height: 100%;"></div>
+        <div id="Wednesday" style="height: 100%;"></div>
+        <div id="Thursday" style="height: 100%;"></div>
+        <div id="Friday" style="height: 100%;"></div>
+        <div id="Saturday" style="height: 100%;"></div>
+        <div id="Sunday" style="height: 100%;"></div>
+
+		<script>var __basePath = './';</script>
+		<script src="//www.ag-grid.com/archive/25.0.0/dev/ag-charts-community/dist/ag-charts-community.js">
+		</script>
+		<script src="data.js">
+		</script>
+		<script src="main.js">
+		</script>
+	</body>
 </html>
