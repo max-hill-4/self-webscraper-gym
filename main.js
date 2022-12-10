@@ -1,9 +1,15 @@
+
+fetch('./sample.json')
+.then((response) => response.json())
+.then((json) => console.log(json));
+
 var options = {
-    container: document.getElementById('myChart'),
+    container: document.getElementById(''),
     title: {
-      text: 'Prize money distribution',
+      text: '',
     },
 
+    
     data: histogramData,
     series: [
       {
@@ -18,26 +24,24 @@ var options = {
     },
     axes: [
       {
-        type: 'number',
+        type: 'time',
         position: 'bottom',
-        title: { text: 'People' },
+        title: { text: 'Time' },
       },
       {
         type: 'number',
         position: 'left',
-        title: { text: 'Time' },
+        title: { text: 'People' },
       },
     ],
-    height: 500,
+    height: 400,
   };
-
-agCharts.AgChart.create(options);
 
 
 var daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 for (let i = 0; i < daysOfTheWeek.length; i++) {
     options.container = document.querySelector("#" + daysOfTheWeek[i]);
-    options.title.text = daysOfTheWeek[i];
+    options.title.text = '' +daysOfTheWeek[i];
     agCharts.AgChart.create(options);
 
 };

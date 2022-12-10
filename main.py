@@ -4,7 +4,7 @@ from selenium.webdriver import ChromeOptions
 from details import EMAIL, PASSWORD
 from datetime import datetime
 import time 
-
+import json
 
 print('setting options')
 opts = ChromeOptions()
@@ -49,12 +49,10 @@ if GymApi.logged_in:
     print(GymApi.get_people()) 
 
 
-'''
-while True:
-    if datetime.now().minute % 5 == 0:
-        if not GymApi.check_login():
-            GymApi.login()
-        print(GymApi.get_people())
-        time.sleep(60)
 
-'''
+while True:
+    
+    if not GymApi.check_login():
+        GymApi.login()
+    print(GymApi.get_people())
+    time.sleep(60)

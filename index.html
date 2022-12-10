@@ -12,7 +12,7 @@
     }
 
     html {
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         padding: 0;
@@ -20,26 +20,43 @@
     }
 
     body {
-        padding: 1rem;
+        padding: 2rem;
         overflow: auto;
+        background-color: rgb(174, 210, 187);
     }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 50px;
+        padding: 100px;
+        }
+    .grid-item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        }
+    
     </style>
 	</head>
 	<body>
-		<div id="Monday" style="height: 100%;"></div>
-		<div id="Tuesday" style="height: 100%;"></div>
-        <div id="Wednesday" style="height: 100%;"></div>
-        <div id="Thursday" style="height: 100%;"></div>
-        <div id="Friday" style="height: 100%;"></div>
-        <div id="Saturday" style="height: 100%;"></div>
-        <div id="Sunday" style="height: 100%;"></div>
-
-		<script>var __basePath = './';</script>
+        <div class="grid-container">
+            <div id="Monday"></div>
+            <div id="Tuesday"></div>
+            <div id="Wednesday"></div>
+            <div id="Thursday"></div>
+            <div id="Friday"></div>
+            <div id="Saturday"></div>
+            <div id="Sunday"></div>
+        </div>
+		<script>
+        var __basePath = './';
+        </script>
 		<script src="//www.ag-grid.com/archive/25.0.0/dev/ag-charts-community/dist/ag-charts-community.js">
 		</script>
-		<script src="data.js">
-		</script>
-		<script src="main.js">
-		</script>
+		<script src="data.js"></script>
+        <script type="text/javascript" src="sample.json"></script>
+		<script src="main.js"></script>
 	</body>
 </html>
