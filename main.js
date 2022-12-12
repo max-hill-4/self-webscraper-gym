@@ -50,7 +50,12 @@ fetchJSON('data.json')
     for (let i = 0; i < daysOfTheWeek.length; i++) {
       options.container = document.querySelector("#" + daysOfTheWeek[i]);
       options.title.text = '' +daysOfTheWeek[i];
-      options.data = data[daysOfTheWeek[i]];
+      if (daysOfTheWeek[i] in data){
+        options.data = data[daysOfTheWeek[i]];
+      }
+      else{
+        options.data = [];
+      }
       agCharts.AgChart.create(options);
   };
 });
