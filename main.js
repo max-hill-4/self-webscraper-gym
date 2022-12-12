@@ -47,10 +47,10 @@ fetchJSON('sample.json')
   .then(data => {
     // i could actually build the graphs and then add the data later.
     // not sure how i am going to handle the data though.
-    options.data = data;
     for (let i = 0; i < daysOfTheWeek.length; i++) {
       options.container = document.querySelector("#" + daysOfTheWeek[i]);
       options.title.text = '' +daysOfTheWeek[i];
+      options.data =data[daysOfTheWeek[i]];
       agCharts.AgChart.create(options);
   
   };
