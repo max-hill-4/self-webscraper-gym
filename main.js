@@ -4,7 +4,7 @@ async function fetchJSON(url) {
   return data;
 }
 
-var histogramData;
+
 
 var options = {
     container: document.getElementById(''),
@@ -13,7 +13,7 @@ var options = {
     },
 
     
-    data:histogramData,
+    data:[],
     series: [
       {
         type: 'histogram',
@@ -40,18 +40,17 @@ var options = {
     height: 400,
   };
 
-
 var daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-fetchJSON('sample.json')
+// this probably doesnt need to be async but i have no idea lmaoo!
+fetchJSON('data.json')
   .then(data => {
     // i could actually build the graphs and then add the data later.
     // not sure how i am going to handle the data though.
     for (let i = 0; i < daysOfTheWeek.length; i++) {
       options.container = document.querySelector("#" + daysOfTheWeek[i]);
       options.title.text = '' +daysOfTheWeek[i];
-      options.data =data[daysOfTheWeek[i]];
+      options.data = data[daysOfTheWeek[i]];
       agCharts.AgChart.create(options);
-  
   };
-  });
+});
