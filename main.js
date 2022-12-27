@@ -43,7 +43,7 @@ var options = {
 var daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 // this probably doesnt need to be async but i have no idea lmaoo!
-fetchJSON('data.json')
+fetchJSON('data/data.json')
   .then(data => {
     // i could actually build the graphs and then add the data later.
     // not sure how i am going to handle the data though.
